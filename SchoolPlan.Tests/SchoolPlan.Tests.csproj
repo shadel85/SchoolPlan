@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SchoolPlan\SchoolPlan.csproj">
+    <ProjectReference Include="..\SchoolPlan.WebApi\SchoolPlan.WebApi.csproj">
       <Project>{28948F07-2D97-41AF-BABE-D995FF5B3E8E}</Project>
-      <Name>SchoolPlan</Name>
+      <Name>SchoolPlan.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
