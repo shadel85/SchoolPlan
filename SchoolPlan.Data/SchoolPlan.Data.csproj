@@ -66,24 +66,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Building.cs" />
     <Compile Include="Entities\Class.cs" />
-    <Compile Include="Entities\Room.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Migrations\201610271023191_CreateDB.cs" />
+    <Compile Include="Migrations\201610271023191_CreateDB.Designer.cs">
+      <DependentUpon>201610271023191_CreateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SchoolPlanContext.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentClass.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SchoolPlan.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SchoolPlan_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SchoolPlan.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,6 +89,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610271023191_CreateDB.resx">
+      <DependentUpon>201610271023191_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

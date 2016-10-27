@@ -6,29 +6,27 @@ namespace SchoolPlan.Data.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Room")]
-    public partial class Room
+    [Table("Location")]
+    public partial class Location
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Room()
+        public Location()
         {
             Classes = new HashSet<Class>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RoomID { get; set; }
+        public int LocationID { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Name { get; set; }
+        public int BuildingNumber { get; set; }
+
+        [Required]
+        public int RoomNumber { get; set; }
 
         public DateTime? CreationDate { get; set; }
 
         public DateTime? ModificationDate { get; set; }
-
-        public int BuildingID { get; set; }
-
-        public virtual Building Building { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class> Classes { get; set; }

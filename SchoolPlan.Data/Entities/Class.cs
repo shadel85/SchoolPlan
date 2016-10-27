@@ -22,15 +22,15 @@ namespace SchoolPlan.Data.Entities
         [StringLength(100)]
         public string Name { get; set; }
 
-        public int RoomID { get; set; }
+        public int LocationID { get; set; }
 
         public int TeacherID { get; set; }
 
-        public DateTime CreationDate { get; set; }
+        public DateTime? CreationDate { get; set; }
 
         public DateTime? ModificationDate { get; set; }
 
-        public virtual Room Room { get; set; }
+        public virtual Location Location { get; set; }
 
         public virtual Teacher Teacher { get; set; }
 

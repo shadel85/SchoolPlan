@@ -9,37 +9,22 @@ namespace SchoolPlan.Data
     public partial class SchoolPlanContext : DbContext
     {
         public SchoolPlanContext()
-            : base("name=SchoolPlanContext")
+            : base("name=SchoolPlanDBContext")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
+            Database.SetInitializer(new CreateDatabaseIfNotExists<SchoolPlanContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolPlanContext, Configuration>());
         }
 
-        public virtual DbSet<Building> Buildings { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
-        public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<StudentClass> StudentClasses { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Building>()
-                .HasKey(e => e.BuildingID);
-
-            modelBuilder.Entity<Building>()
-                .Property(e => e.BuildingID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-
-            modelBuilder.Entity<Building>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Building>()
-                .HasMany(e => e.Rooms)
-                .WithRequired(e => e.Building)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Class>()
                 .HasKey(e => e.ClassID);
 
@@ -55,19 +40,15 @@ namespace SchoolPlan.Data
                 .WithRequired(e => e.Class)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Room>()
-             .HasKey(e => e.RoomID);
+            modelBuilder.Entity<Location>()
+             .HasKey(e => e.LocationID);
 
-            modelBuilder.Entity<Room>()
-                .Property(e => e.RoomID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Location>()
+                .Property(e => e.LocationID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            modelBuilder.Entity<Room>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Room>()
+            modelBuilder.Entity<Location>()
                 .HasMany(e => e.Classes)
-                .WithRequired(e => e.Room)
+                .WithRequired(e => e.Location)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Student>()

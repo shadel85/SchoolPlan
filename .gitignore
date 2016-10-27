@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/SchoolPlan.Data/Migrations/201610271023191_CreateDB.resx
+/SchoolPlan.Data/Migrations/201610271023191_CreateDB.Designer.cs
+/SchoolPlan.Data/Migrations/201610271023191_CreateDB.cs
