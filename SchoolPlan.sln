@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPlan.DataAccess.Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPlan.DataAccess", "SchoolPlan.DataAccess\SchoolPlan.DataAccess.csproj", "{7D68B4BE-F813-4AFB-B63B-2C7FC0047D05}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{03C73098-B48A-4259-80E3-94CF9FD3AA59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolPlan.DataAccess.Tests", "SchoolPlan.DataAccess.Tests\SchoolPlan.DataAccess.Tests.csproj", "{7DCFFCFF-864F-4083-A1CC-939405D2B08A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,14 @@ Global
 		{7D68B4BE-F813-4AFB-B63B-2C7FC0047D05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D68B4BE-F813-4AFB-B63B-2C7FC0047D05}.Release|x86.ActiveCfg = Release|Any CPU
 		{7D68B4BE-F813-4AFB-B63B-2C7FC0047D05}.Release|x86.Build.0 = Release|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Debug|x86.Build.0 = Debug|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Release|x86.ActiveCfg = Release|Any CPU
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +96,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DC6EBF86-4B3B-4957-8C56-75809802BBA1} = {00918710-3C6B-4C63-B389-B7BF3EA1B125}
 		{7D68B4BE-F813-4AFB-B63B-2C7FC0047D05} = {00918710-3C6B-4C63-B389-B7BF3EA1B125}
+		{7DCFFCFF-864F-4083-A1CC-939405D2B08A} = {03C73098-B48A-4259-80E3-94CF9FD3AA59}
 	EndGlobalSection
 EndGlobal

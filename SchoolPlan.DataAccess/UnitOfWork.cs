@@ -18,10 +18,7 @@ namespace SchoolPlan.DataAccess
             _context = context;
         }
 
-        public SchoolPlanContext Context
-        {
-            get { return _context; }
-        }
+        public SchoolPlanContext Context => _context;
 
         public T GetRepository<T>()
         {
@@ -54,10 +51,7 @@ namespace SchoolPlan.DataAccess
 
         public void Dispose()
         {
-            if (_context != null)
-            {
-                _context.Dispose();
-            }
+            _context?.Dispose();
         }
     }
 }
