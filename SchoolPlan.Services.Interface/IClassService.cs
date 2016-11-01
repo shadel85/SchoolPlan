@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SchoolPlan.Services.Interface.Models;
 
 namespace SchoolPlan.Services.Interface
 {
-    interface IClassService
+    public interface IClassService
     {
+        IEnumerable<Class> GetClasses();
+
     }
 }

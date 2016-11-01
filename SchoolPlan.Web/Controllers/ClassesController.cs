@@ -4,15 +4,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using SchoolPlan.Services.Interface;
+using SchoolPlan.Web.Models;
 
 namespace SchoolPlan.Web.Controllers
 {
     public class ClassesController : ApiController
     {
-        // GET: api/Classes
-        public IEnumerable<string> Get()
+        private readonly IClassService _classService;
+
+        public ClassesController(IClassService classService)
         {
-            return new string[] { "value1", "value2" };
+            _classService = classService;
+        }
+
+        // GET: api/Classes
+        public IEnumerable<Class> Get()
+        {
+            return null;
         }
 
         // GET: api/Classes/5

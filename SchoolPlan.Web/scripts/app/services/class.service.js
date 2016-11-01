@@ -1,4 +1,6 @@
 ﻿(function (angular) {
+    angular.module('schoolPlan').factory('classService', classService);
+
     function classService($http) {
         var service = {
             getClasses: getClasses,
@@ -19,8 +21,12 @@
         }
 
         function getClasses() {
-            return $http.get("/api/Classes");
+            return $http.get("/api/Classes")
+                .then(function (response) {
+                    return response.data;
+                });
         }
+
         function deleteClass(classId) {
             var request = $http({
                 method: "delete",
@@ -38,5 +44,5 @@
             return request;
         }
     }
-    angular.module('schoolPlan').factory('classService', classService);
+
 })(angular);

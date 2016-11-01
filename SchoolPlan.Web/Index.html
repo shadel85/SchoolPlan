@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <title>School Plan 2017</title>
-
+    <!--TODO: Bundling-->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/jquery-1.9.1.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="scripts/lib/jquery/jquery-1.9.1.min.js"></script>
+    <script src="scripts/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="scripts/lib/angular/angular.min.js"></script>
+    <script src="scripts/app/app.module.js"></script>
+    <script src="scripts/app/services/class.service.js"></script>
+    <script src="scripts/app/controllers/class.controller.js"></script>
+
 </head>
 <body>
 
-    <div class="container">
-        <div>
+    <div class="container" ng-app="schoolPlan">
+        <div ng-controller="classController as classesCtrl">
             <h2>Classes</h2>
             <table class="table table-bordered">
                 <thead>
@@ -23,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr ng-repeat="class in classesCtrl.classes">
                         <td>{{5+5}}</td>
                         <td>Doe</td>
                         <td>john@example.com</td>
@@ -42,7 +47,7 @@
                         <th>Student Name</th>
                         <th>Age </th>
                         <th>GPA</th>
-                        <th></th>   
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -62,3 +67,4 @@
 
 </body>
 </html>
+

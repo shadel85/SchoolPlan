@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchoolPlan.Services.Interface
 {
-    interface IStudentService
+    public interface IStudentService
     {
     }
 }
