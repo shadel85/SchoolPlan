@@ -4,8 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using SchoolPlan.DataAccess.Interface;
-using SchoolPlan.DataAccess.Interface.Repositories;
 using SchoolPlan.Services.Interface;
 using SchoolPlan.Services.Interface.Models;
 
@@ -21,7 +21,10 @@ namespace SchoolPlan.Services
         }
         public IEnumerable<Class> GetClasses()
         {
-            var classRepo = _unitOfWork.GetRepository<IClassRepository>();
+            //var classRepo = _unitOfWork.GetRepository<ISchoolPlanRepository<DataAccess.Interface.Models.Class>>();
+            var classes = _unitOfWork.ClassRepository.GetAll();
+            
+            //return Mapper.Map<IEnumerable<Class>>(classes);
             return null;
         }
     }

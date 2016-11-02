@@ -1,40 +1,29 @@
+using System;
+using System.Collections.Generic;
+
 namespace SchoolPlan.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    [Table("Class")]
-    public partial class Class
+    public class Class
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Class()
         {
-            StudentClasses = new HashSet<StudentClass>();
+            StudentClasses = new List<StudentClass>();
+            Teacher = new Teacher();
+            Location = new Location();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ClassID { get; set; }
+        public int Id { get; set; }
 
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; }
-
-        public int LocationID { get; set; }
-
-        public int TeacherID { get; set; }
 
         public DateTime? CreationDate { get; set; }
 
         public DateTime? ModificationDate { get; set; }
 
-        public virtual Location Location { get; set; }
+        public Location Location { get; set; }
 
-        public virtual Teacher Teacher { get; set; }
+        public Teacher Teacher { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StudentClass> StudentClasses { get; set; }
+        public ICollection<StudentClass> StudentClasses { get; set; }
     }
 }

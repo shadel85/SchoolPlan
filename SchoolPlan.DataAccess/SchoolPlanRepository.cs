@@ -25,7 +25,7 @@ namespace SchoolPlan.DataAccess
             return _dbSet.AsQueryable();
         }
 
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
             return _dbSet;
         }
@@ -33,16 +33,6 @@ namespace SchoolPlan.DataAccess
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
         {
             return _dbSet.Where(predicate);
-        }
-
-        IQueryable<T> ISchoolPlanRepository<T>.AsQueryable()
-        {
-            return _dbSet.AsQueryable();
-        }
-
-        IEnumerable<T> ISchoolPlanRepository<T>.GetAll()
-        {
-            return _dbSet;
         }
 
         public T Single(Expression<Func<T, bool>> predicate)

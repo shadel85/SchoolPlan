@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
+using Bootstrap;
+using Bootstrap.AutoMapper;
 
 namespace SchoolPlan.Web
 {
@@ -12,6 +13,7 @@ namespace SchoolPlan.Web
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            //Bootstrapper.With.AutoMapper().Start();
         }
     }
 }

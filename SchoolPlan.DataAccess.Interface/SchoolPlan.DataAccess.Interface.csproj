@@ -52,11 +52,6 @@
     <Compile Include="Models\StudentClass.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IClassRepository.cs" />
-    <Compile Include="Repositories\IStudentClassRepository.cs" />
-    <Compile Include="Repositories\ITeacherRepository.cs" />
-    <Compile Include="Repositories\IStudentRepository.cs" />
-    <Compile Include="Repositories\ILocationRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SchoolPlan.Data\SchoolPlan.Data.csproj">

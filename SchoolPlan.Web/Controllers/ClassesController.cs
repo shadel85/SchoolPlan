@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AutoMapper;
 using SchoolPlan.Services.Interface;
 using SchoolPlan.Web.Models;
 
@@ -21,6 +22,8 @@ namespace SchoolPlan.Web.Controllers
         // GET: api/Classes
         public IEnumerable<Class> Get()
         {
+            var serviceClasses = _classService.GetClasses();
+            //return Mapper.Map<IEnumerable<Class>>(serviceClasses);
             return null;
         }
 

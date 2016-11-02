@@ -1,20 +1,14 @@
+using System;
 namespace SchoolPlan.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    [Table("StudentClass")]
-    public partial class StudentClass
+    public class StudentClass
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StudentClassID { get; set; }
-
-        public int StudentID { get; set; }
-
-        public int ClassID { get; set; }
+        public StudentClass()
+        {
+            Student = new Student();
+            Class = new Class();
+        }
+        public int Id { get; set; }
 
         public decimal? GPA { get; set; }
 
@@ -22,8 +16,8 @@ namespace SchoolPlan.Data.Entities
 
         public DateTime? ModificationDate { get; set; }
 
-        public virtual Class Class { get; set; }
+        public Class Class { get; set; }
 
-        public virtual Student Student { get; set; }
+        public Student Student { get; set; }
     }
 }

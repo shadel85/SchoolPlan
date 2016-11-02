@@ -10,6 +10,5 @@ namespace SchoolPlan.Services.Interface
     public interface IClassService
     {
         IEnumerable<Class> GetClasses();
-
     }
 }

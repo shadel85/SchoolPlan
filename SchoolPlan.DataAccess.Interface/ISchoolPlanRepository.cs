@@ -9,7 +9,7 @@ namespace SchoolPlan.DataAccess.Interface
     {
         IQueryable<T> AsQueryable();
 
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
 
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         T Single(Expression<Func<T, bool>> predicate);
