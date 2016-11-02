@@ -1,5 +1,6 @@
-﻿using SchoolPlan.DataAccess.Interface;
-using SchoolPlan.DataAccess.Interface.Models;
+﻿using SchoolPlan.Data.Entities;
+using SchoolPlan.DataAccess.Interface;
+using Student = SchoolPlan.Data.Entities.Student;
 
 namespace SchoolPlan.DataAccess.Repositories
 {

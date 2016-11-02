@@ -21,11 +21,17 @@ namespace SchoolPlan.Services
         }
         public IEnumerable<Class> GetClasses()
         {
-            //var classRepo = _unitOfWork.GetRepository<ISchoolPlanRepository<DataAccess.Interface.Models.Class>>();
             var classes = _unitOfWork.ClassRepository.GetAll();
-            
-            //return Mapper.Map<IEnumerable<Class>>(classes);
-            return null;
+            var serviceClasses = new List<Class>();
+            foreach (var item in classes)
+            {
+                serviceClasses.Add(new Class
+                {
+                    Name = item.Name,
+                    ClassId = item.Id
+                });
+            }
+            return serviceClasses;
         }
     }
 }

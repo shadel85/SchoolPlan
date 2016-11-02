@@ -1,5 +1,5 @@
 ﻿using SchoolPlan.DataAccess.Interface;
-using SchoolPlan.DataAccess.Interface.Models;
+using Teacher = SchoolPlan.Data.Entities.Teacher;
 
 namespace SchoolPlan.DataAccess.Repositories
 {

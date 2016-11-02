@@ -1,5 +1,5 @@
-﻿using SchoolPlan.DataAccess.Interface;
-using SchoolPlan.DataAccess.Interface.Models;
+﻿using SchoolPlan.Data.Entities;
+using SchoolPlan.DataAccess.Interface;
 
 namespace SchoolPlan.DataAccess.Repositories
 {

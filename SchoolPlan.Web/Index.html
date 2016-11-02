@@ -30,8 +30,8 @@
                 <tbody>
                     <tr ng-repeat="class in classesCtrl.classes">
                         <td>{{5+5}}</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
+                        <td ng-bind="class.Name"></td>
+                        <td>{{class.ClassId}}</td>
                         <td>Edit</td>
                         <td>Delete</td>
                     </tr>

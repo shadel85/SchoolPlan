@@ -23,8 +23,16 @@ namespace SchoolPlan.Web.Controllers
         public IEnumerable<Class> Get()
         {
             var serviceClasses = _classService.GetClasses();
-            //return Mapper.Map<IEnumerable<Class>>(serviceClasses);
-            return null;
+            var viewClasses = new List<Class>();
+            foreach (var item in serviceClasses)
+            {
+                viewClasses.Add(new Class
+                {
+                    Name = item.Name,
+                    ClassId = item.ClassId
+                });
+            }
+            return viewClasses;
         }
 
         // GET: api/Classes/5

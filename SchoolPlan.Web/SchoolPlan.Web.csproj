@@ -140,6 +140,16 @@
     <Content Include="scripts\app\app.module.js" />
     <Content Include="scripts\app\services\class.service.js" />
     <Content Include="scripts\app\services\studentClass.service.js" />
+    <Content Include="scripts\lib\angular\angular-mocks.js" />
+    <Content Include="scripts\lib\angular\angular-route.js" />
+    <Content Include="scripts\lib\angular\angular-route.min.js" />
+    <Content Include="scripts\lib\angular\angular.js" />
+    <Content Include="scripts\lib\angular\angular.min.js" />
+    <Content Include="scripts\lib\bootstrap\bootstrap.js" />
+    <Content Include="scripts\lib\bootstrap\bootstrap.min.js" />
+    <None Include="scripts\lib\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\lib\jquery\jquery-1.9.1.js" />
+    <Content Include="scripts\lib\jquery\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="scripts\lib\angular\angular-route.min.js.map" />
+    <Content Include="scripts\lib\angular\angular.min.js.map" />
+    <Content Include="scripts\lib\jquery\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

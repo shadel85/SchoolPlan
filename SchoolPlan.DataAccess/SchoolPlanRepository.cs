@@ -27,7 +27,8 @@ namespace SchoolPlan.DataAccess
 
         public IQueryable<T> GetAll()
         {
-            return _dbSet;
+            var xxx = _dbSet;
+            return xxx;
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)

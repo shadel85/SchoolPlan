@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using Ninject;
-using Ninject.Parameters;
-using SchoolPlan.Data;
+﻿using SchoolPlan.Data;
 using SchoolPlan.DataAccess.Interface;
 using System.Linq;
-using System.Reflection;
-using SchoolPlan.DataAccess.Interface.Models;
 using SchoolPlan.DataAccess.Repositories;
+using SchoolPlan.Data.Entities;
 
 namespace SchoolPlan.DataAccess
 {
@@ -22,28 +18,18 @@ namespace SchoolPlan.DataAccess
         }
 
         public SchoolPlanContext Context => _context;
+
         private ISchoolPlanRepository<Class> _classRepository;
-      
+        private ISchoolPlanRepository<Student> _studentRepository;
+        private ISchoolPlanRepository<Location> _locationRepository;
+        private ISchoolPlanRepository<Teacher> _teacherRepository;
+        private ISchoolPlanRepository<StudentClass> _studentClassRepository;
+
         public ISchoolPlanRepository<Class> ClassRepository => _classRepository ?? (_classRepository = new ClassRepository(this));
-
-        //public T GetRepository<T>()
-        //{
-        //    using (var kernel = new StandardKernel())
-        //    {
-        //        kernel.Load(Assembly.GetExecutingAssembly());
-        //        var result = kernel.Get<T>(new ConstructorArgument("unitOfWWork", this));
-
-        //        if (result != null)
-        //        {
-        //            return result;
-        //        }
-        //    }
-        //    //TODO
-        //    // Optional: return an error instead of a null?
-        //    //var msg = typeof (T).FullName + " doesn't implement the IBlogModule.";
-        //    //throw new Exception(msg);
-        //    return default(T);
-        //}
+        public ISchoolPlanRepository<Student> StudentRepository => _studentRepository ?? (_studentRepository = new StudentRepository(this));
+        public ISchoolPlanRepository<Location> LocationRepository => _locationRepository ?? (_locationRepository = new LocationRepository(this));
+        public ISchoolPlanRepository<Teacher> TeacherRepository => _teacherRepository ?? (_teacherRepository = new TeacherRepository(this));
+        public ISchoolPlanRepository<StudentClass> StudentClassRepository => _studentClassRepository ?? (_studentClassRepository = new StudentClassRepository(this));
 
         public void Rollback()
         {

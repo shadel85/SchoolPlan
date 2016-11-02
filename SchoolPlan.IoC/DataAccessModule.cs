@@ -2,8 +2,8 @@
 using SchoolPlan.DataAccess.Interface;
 using SchoolPlan.DataAccess;
 using SchoolPlan.Data;
-using SchoolPlan.DataAccess.Interface.Models;
 using SchoolPlan.DataAccess.Repositories;
+using SchoolPlan.Data.Entities;
 
 namespace SchoolPlan.IoC
 {
