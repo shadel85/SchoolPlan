@@ -1,8 +1,7 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using SchoolPlan.DataAccess.Interface.Models;
 
-namespace SchoolPlan.DataAccess.Mapping
+namespace SchoolPlan.DataAccess.Interface.Mapping
 {
     public class DataAccessProfile : Profile
     {

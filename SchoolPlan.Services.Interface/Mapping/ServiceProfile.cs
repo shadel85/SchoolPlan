@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SchoolPlan.Services.Interface.Models;
 
-namespace SchoolPlan.Services.Mapping
+namespace SchoolPlan.Services.Interface.Mapping
 {
     public class ServiceProfile : Profile
     {

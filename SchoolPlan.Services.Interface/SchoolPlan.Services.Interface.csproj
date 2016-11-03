@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,12 +49,22 @@
     <Compile Include="IStudentClassService.cs" />
     <Compile Include="IStudentService.cs" />
     <Compile Include="ITeacherService.cs" />
+    <Compile Include="Mapping\ServiceProfile.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentClass.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolPlan.DataAccess.Interface\SchoolPlan.DataAccess.Interface.csproj">
+      <Project>{dc6ebf86-4b3b-4957-8c56-75809802bba1}</Project>
+      <Name>SchoolPlan.DataAccess.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

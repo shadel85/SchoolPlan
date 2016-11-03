@@ -24,6 +24,8 @@ namespace SchoolPlan.Web.Controllers
         {
             var serviceClasses = _classService.GetClasses();
             var viewClasses = new List<Class>();
+            var serviceClass = serviceClasses.First();
+            var mapped = Mapper.Map<Class>(serviceClass);
             foreach (var item in serviceClasses)
             {
                 viewClasses.Add(new Class

@@ -9,10 +9,6 @@ namespace SchoolPlan.Web.Models
 
         public string Name { get; set; }
 
-        public int LocationId { get; set; }
-
-        public int TeacherId { get; set; }
-
         public DateTime? CreationDate { get; set; }
 
         public DateTime? ModificationDate { get; set; }

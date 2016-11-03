@@ -20,18 +20,12 @@ namespace SchoolPlan.DataAccess
             _dbSet = _context.Set<T>();
         }
 
-        public virtual IQueryable<T> AsQueryable()
+        public IQueryable<T> GetAll()
         {
             return _dbSet.AsQueryable();
         }
 
-        public IQueryable<T> GetAll()
-        {
-            var xxx = _dbSet;
-            return xxx;
-        }
-
-        public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+        public IQueryable<T> Find(Expression<Func<T, bool>> predicate)
         {
             return _dbSet.Where(predicate);
         }
@@ -39,16 +33,6 @@ namespace SchoolPlan.DataAccess
         public T Single(Expression<Func<T, bool>> predicate)
         {
             return Find(predicate).Single();
-        }
-
-        public T SingleOrDefault(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T First(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
         }
 
         public T GetById(int id)

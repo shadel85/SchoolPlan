@@ -7,11 +7,9 @@ namespace SchoolPlan.DataAccess.Interface
 {
     public interface ISchoolPlanRepository<T>  where T : class
     {
-        IQueryable<T> AsQueryable();
-
         IQueryable<T> GetAll();
 
-        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
+        IQueryable<T> Find(Expression<Func<T, bool>> predicate);
         T Single(Expression<Func<T, bool>> predicate);
         T GetById(int id);
 

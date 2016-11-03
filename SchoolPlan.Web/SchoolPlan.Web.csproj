@@ -153,6 +153,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
@@ -162,7 +163,6 @@
     <Compile Include="Mapping\WebProfile.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\SchoolPlanContext.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentClass.cs" />
     <Compile Include="Models\Teacher.cs" />
@@ -184,6 +184,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SchoolPlan.DataAccess.Interface\SchoolPlan.DataAccess.Interface.csproj">
+      <Project>{dc6ebf86-4b3b-4957-8c56-75809802bba1}</Project>
+      <Name>SchoolPlan.DataAccess.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SchoolPlan.IoC\SchoolPlan.IoC.csproj">
       <Project>{9b136189-b2b7-47cb-8863-346637229c7a}</Project>
       <Name>SchoolPlan.IoC</Name>
