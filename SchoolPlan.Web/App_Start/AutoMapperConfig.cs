@@ -1,22 +1,29 @@
 ﻿using AutoMapper;
-using SchoolPlan.DataAccess.Interface.Mapping;
 using SchoolPlan.Web.Models;
-using SchoolPlan.Services.Interface.Mapping;
-using SchoolPlan.Web.Mapping;
 
 namespace SchoolPlan.Web
 {
     public class AutoMapperConfig
     {
-        public static void Configure()
+        public static MapperConfiguration Configure()
         {
-            Mapper.Initialize(config =>
+            var config = new MapperConfiguration(cfg =>
             {
-                config.AddProfile<WebProfile>();
-                //config.AddProfile<ServiceProfile>();
-                //config.AddProfile<DataAccessProfile>();
+                cfg.CreateMap<Class, Services.Interface.Models.Class>()
+                .ForMember(dest => dest.StudentClasses, opt => opt.Ignore())
+                .ForMember(dest => dest.Teacher, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore())
+                .ForMember(dest => dest.ClassId, opt => opt.MapFrom(src => src.ClassId))
+                .ForMember(dest => dest.ClassId, opt => opt.MapFrom(src => src.ClassId))
+                .ReverseMap()
+                .ForMember(dest => dest.StudentClasses, opt => opt.Ignore())
+                .ForMember(dest => dest.Teacher, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore())
+                .ForMember(dest => dest.ClassId, opt => opt.MapFrom(src => src.ClassId));
+
+
             });
-            //Mapper.Initialize(cfg => cfg.CreateMap<Class, Services.Interface.Models.Class>());
+            return config;
         }
     }
 }

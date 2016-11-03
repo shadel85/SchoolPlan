@@ -13,28 +13,19 @@ namespace SchoolPlan.Web.Controllers
     public class ClassesController : ApiController
     {
         private readonly IClassService _classService;
+        private readonly IMapper _mapper;
 
-        public ClassesController(IClassService classService)
+        public ClassesController(IClassService classService, IMapper mapper)
         {
             _classService = classService;
+            _mapper = mapper;
         }
 
         // GET: api/Classes
         public IEnumerable<Class> Get()
         {
             var serviceClasses = _classService.GetClasses();
-            var viewClasses = new List<Class>();
-            var serviceClass = serviceClasses.First();
-            var mapped = Mapper.Map<Class>(serviceClass);
-            foreach (var item in serviceClasses)
-            {
-                viewClasses.Add(new Class
-                {
-                    Name = item.Name,
-                    ClassId = item.ClassId
-                });
-            }
-            return viewClasses;
+            return _mapper.Map<IEnumerable<Class>>(serviceClasses);
         }
 
         // GET: api/Classes/5
