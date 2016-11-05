@@ -14,24 +14,18 @@ namespace SchoolPlan.Services
     public class ClassService : IClassService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public ClassService(IUnitOfWork unitOfWork)
+        public ClassService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
+
         public IEnumerable<Class> GetClasses()
         {
             var classes = _unitOfWork.ClassRepository.GetAll();
-            var serviceClasses = new List<Class>();
-            foreach (var item in classes)
-            {
-                serviceClasses.Add(new Class
-                {
-                    Name = item.Name,
-                    ClassId = item.Id
-                });
-            }
-            return serviceClasses;
+            return _mapper.Map<IEnumerable<Class>>(classes);
         }
     }
 }

@@ -49,7 +49,6 @@
     <Compile Include="IStudentClassService.cs" />
     <Compile Include="IStudentService.cs" />
     <Compile Include="ITeacherService.cs" />
-    <Compile Include="Mapping\ServiceProfile.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Student.cs" />

@@ -187,6 +187,10 @@
       <Project>{dc6ebf86-4b3b-4957-8c56-75809802bba1}</Project>
       <Name>SchoolPlan.DataAccess.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SchoolPlan.Data\SchoolPlan.Data.csproj">
+      <Project>{16ad8049-60fd-4d6e-a944-b9911adc89f1}</Project>
+      <Name>SchoolPlan.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SchoolPlan.IoC\SchoolPlan.IoC.csproj">
       <Project>{9b136189-b2b7-47cb-8863-346637229c7a}</Project>
       <Name>SchoolPlan.IoC</Name>

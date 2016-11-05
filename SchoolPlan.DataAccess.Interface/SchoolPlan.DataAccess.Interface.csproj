@@ -50,12 +50,6 @@
   <ItemGroup>
     <Compile Include="ISchoolPlanRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
-    <Compile Include="Mapping\DataAccessProfile.cs" />
-    <Compile Include="Models\Class.cs" />
-    <Compile Include="Models\Location.cs" />
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentClass.cs" />
-    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

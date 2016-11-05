@@ -21,7 +21,17 @@ namespace SchoolPlan.Web
                 .ForMember(dest => dest.Location, opt => opt.Ignore())
                 .ForMember(dest => dest.ClassId, opt => opt.MapFrom(src => src.ClassId));
 
-
+                cfg.CreateMap<Services.Interface.Models.Class,Data.Entities.Class>()
+                .ForMember(dest => dest.StudentClasses, opt => opt.Ignore())
+                .ForMember(dest => dest.Teacher, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ClassId))
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ClassId))
+                .ReverseMap()
+                .ForMember(dest => dest.StudentClasses, opt => opt.Ignore())
+                .ForMember(dest => dest.Teacher, opt => opt.Ignore())
+                .ForMember(dest => dest.Location, opt => opt.Ignore())
+                .ForMember(dest => dest.ClassId, opt => opt.MapFrom(src => src.Id));
             });
             return config;
         }
